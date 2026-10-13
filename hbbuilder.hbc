@@ -1,0 +1,15 @@
+#
+# hbbuilder.hbc - HarbourBuilder runtime (Windows)
+#
+
+incpaths=include
+libpaths=lib/${hb_plat}/${hb_comp}
+
+gt=gtgui
+
+libs=hbbuilderlib
+libs=hbct hbsqlit3.hbc
+
+{win}libs=user32 gdi32 comctl32 comdlg32 shell32 ole32 oleaut32 advapi32 uuid
+{win}libs=ws2_32 winmm msimg32 gdiplus winspool dwmapi iphlpapi shlwapi
+{win&allgcc}libs=stdc++

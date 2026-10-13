@@ -107,3 +107,6 @@ bp_trace.log
 # IDE runtime dirs
 hbbuilder_build/
 hbbuilder_debug/
+
+# runtime as library (hbbuilderlib.hbp)
+/lib/

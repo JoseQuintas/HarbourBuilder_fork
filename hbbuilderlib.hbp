@@ -1,0 +1,31 @@
+#
+# hbbuilderlib.hbp - HarbourBuilder runtime as Harbour library
+#
+# build : hbmk2 hbbuilderlib.hbp
+# use   : hbmk2 myapp.prg hbbuilder.hbc
+#
+
+hbbuilder.hbc
+
+-hblib
+-inc
+
+-olib/${hb_plat}/${hb_comp}/hbbuilderlib
+
+-w0
+-cflag=-DHBIDE_WITH_HIX_RUNTIME
+{allgcc}-cflag=-Wno-cast-function-type
+{win}-incpath=source/backends/win32/webview2
+
+source/core/classes.prg
+source/hix_runtime.prg
+source/hix_template.prg
+{win}source/lib/hbblib_win.prg
+
+{win}source/cpp/hbbridge.cpp
+{win}source/cpp/tcontrol.cpp
+{win}source/cpp/tcontrols.cpp
+{win}source/cpp/tform.cpp
+{win}source/cpp/hb_db_real.cpp
+{win}source/lib/hbblib_ext.cpp
+{win}source/backends/win32/webview2/fwh_webview2.cpp
